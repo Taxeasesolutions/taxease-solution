@@ -1,60 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tax Ease Solution</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f8fb;
       color: #333;
     }
+
     header {
       background-color: #004080;
       color: white;
-      padding: 1.5em;
+      padding: 2em 1em;
       text-align: center;
     }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    header p {
+      margin-top: 0.5em;
+      font-size: 1.1em;
+    }
+
     nav {
+      background-color: #e0e7ff;
+      padding: 0.8em;
       text-align: center;
-      margin: 1em 0;
     }
+
     nav a {
-      margin: 0 1em;
+      margin: 0 1.5em;
       color: #004080;
       text-decoration: none;
       font-weight: bold;
     }
+
     .hero {
-      background-color: #e6f0ff;
-      padding: 2em;
       text-align: center;
+      padding: 2.5em 1em;
+      background-color: #dbeafe;
     }
+
     .hero h2 {
+      font-size: 2em;
+      margin-bottom: 0.3em;
+    }
+
+    .section {
+      background: white;
+      margin: 1.5em auto;
+      padding: 2em;
+      max-width: 900px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .section h2 {
+      color: #004080;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin-bottom: 0.7em;
+    }
+
+    ul li::before {
+      content: "✔️ ";
+      color: green;
+    }
+
+    .contact-info p {
       margin: 0.5em 0;
     }
-    .section {
-      padding: 2em;
-      background-color: white;
-      margin: 1em;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
+
     footer {
       text-align: center;
       background-color: #004080;
       color: white;
       padding: 1em;
+      margin-top: 2em;
+    }
+
+    @media screen and (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 0.5em 0;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Tax Ease Solution</h1>
-    <p>Making Tax & Financial Reporting Simple and Reliable</p>
+    <p>Reliable Tax & Financial Reporting, Simplified</p>
   </header>
 
   <nav>
@@ -64,31 +113,34 @@
   </nav>
 
   <section class="hero">
-    <h2>File Your Income Tax Return for Tax Year </h2>
-    <p>Let us handle your tax filing, wealth statement, and financial compliance – professionally and on time.</p>
+    <h2>File Your Income Tax Return for 2025</h2>
+    <p>Let professionals handle your tax filing, wealth statement & compliance – on time and accurately.</p>
   </section>
 
   <section class="section" id="services">
     <h2>Our Services</h2>
     <ul>
-      <li>✔️ Income Tax Return Filing</li>
-      <li>✔️ Wealth Statement & Reconciliation</li>
-      <li>✔️ Bookkeeping & Financial Reporting</li>
-      <li>✔️ NTN Registration & Profile Update</li>
-      <li>✔️ Corporate Tax Advisory</li>
+      <li>Income Tax Return Filing</li>
+      <li>Wealth Statement & Reconciliation</li>
+      <li>Bookkeeping & Financial Reporting</li>
+      <li>NTN Registration & Tax Profile Update</li>
+      <li>Corporate Tax Advisory</li>
     </ul>
   </section>
 
   <section class="section" id="about">
     <h2>About Us</h2>
-    <p>Tax Ease Solution is committed to providing reliable and accurate tax and financial services. We serve individuals, businesses, and professionals with personalized guidance and ensure full compliance with tax laws.</p>
+    <p>Tax Ease Solution is a trusted consultancy firm offering comprehensive tax and compliance services tailored to individuals, freelancers, salaried persons, and businesses. Our mission is to make financial compliance easier and stress-free.</p>
   </section>
 
   <section class="section" id="contact">
     <h2>Contact Us</h2>
-    <p>📞 Phone: +92-317-5550</p>
-    <p>📧 Email: info@complitax@gmail.com</p>
-    <p>🌐 Social Media: @taxeasesolution</p>
+    <div class="contact-info">
+      <p><strong>📞 Phone / WhatsApp:</strong> <a href="tel:+923170615550">0317-0615550</a></p>
+      <p><strong>📧 Email:</strong> <a href="mailto:complitax@gmail.com">complitax@gmail.com</a></p>
+      <p><strong>🌐 Website:</strong> <a href="https://taxeasesolution.com">www.taxeasesolution.com</a></p>
+      <p><strong>📱 Social Media:</strong> @taxeasesolution</p>
+    </div>
   </section>
 
   <footer>
