@@ -4,97 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tax Ease Solution</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f9f9f9;
       color: #333;
     }
     header {
-      background-color: #002f5f;
+      background-color: #004080;
       color: white;
       padding: 1.5em;
       text-align: center;
     }
     nav {
-      background-color: #e6f0ff;
       text-align: center;
-      padding: 1em 0;
+      margin: 1em 0;
     }
     nav a {
       margin: 0 1em;
-      color: #002f5f;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .hero {
-      background: linear-gradient(to right, #004080, #0073e6);
-      color: white;
-      padding: 4em 2em;
-      text-align: center;
-    }
-    .hero h2 {
-      font-size: 2.5em;
-      margin-bottom: 0.5em;
-    }
-    .hero p {
-      font-size: 1.2em;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 1em;
-      padding: 0.7em 1.5em;
-      background-color: white;
       color: #004080;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 5px;
+    }
+    .hero {
+      background-color: #e6f0ff;
+      padding: 2em;
+      text-align: center;
+    }
+    .hero h2 {
+      margin: 0.5em 0;
     }
     .section {
       padding: 2em;
       background-color: white;
       margin: 1em;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-    .card {
-      background-color: #f1f6ff;
-      padding: 1.5em;
-      border-radius: 8px;
-      margin: 1em 0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    .card h3 {
-      margin-top: 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     footer {
       text-align: center;
-      background-color: #002f5f;
+      background-color: #004080;
       color: white;
       padding: 1em;
     }
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      border-radius: 50%;
-      padding: 15px;
-      font-size: 24px;
+    .whatsapp {
       text-align: center;
-      z-index: 100;
+      margin-top: 1em;
     }
-    .whatsapp-float:hover {
-      background-color: #1ebc59;
-    }
-    @media (max-width: 768px) {
-      .hero h2 {
-        font-size: 2em;
-      }
+    .whatsapp a {
+      text-decoration: none;
+      color: white;
+      background-color: #25D366;
+      padding: 10px 20px;
+      border-radius: 50px;
+      display: inline-block;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -111,59 +77,53 @@
   </nav>
 
   <section class="hero">
-    <h2>File Your Income Tax Return for 2025</h2>
+    <h2>File Your Income Tax Return for Tax Year</h2>
     <p>Let us handle your tax filing, wealth statement, and financial compliance – professionally and on time.</p>
-    <a href="https://wa.me/923170615550" class="btn">WhatsApp Us</a>
   </section>
 
   <section class="section" id="services">
     <h2>Our Services</h2>
-
-    <div class="card">
-      <h3>Corporate Services</h3>
-      <ul>
-        <li>Business Registration & Statutory Compliance</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Taxation</h3>
-      <ul>
-        <li>Tax Planning & Advisory</li>
-        <li>Filing of Returns (Corporate & Individual)</li>
-        <li>Sales Tax Returns & Compliance</li>
-        <li>Monthly, Quarterly, & Annual Reporting</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Accounting</h3>
-      <ul>
-        <li>Preparation of Financial Statements</li>
-        <li>General Ledger Maintenance</li>
-        <li>Record-Keeping & Reconciliations</li>
-        <li>Payroll Processing</li>
-        <li>Accounts Payable/Receivable Management</li>
-      </ul>
-    </div>
+    <h3>Corporate Services</h3>
+    <ul>
+      <li>✔️ Business Registration & Statutory Compliance</li>
+    </ul>
+    <h3>Taxation</h3>
+    <ul>
+      <li>✔️ Tax Planning & Advisory</li>
+      <li>✔️ Filing of Returns (Corporate & Individual)</li>
+      <li>✔️ Filing of Sales Tax Returns & Compliance</li>
+      <li>✔️ Monthly, Quarterly, & Annual Reporting</li>
+    </ul>
+    <h3>Accounting</h3>
+    <ul>
+      <li>✔️ Preparation of Financial Statements</li>
+      <li>✔️ General Ledger Maintenance</li>
+      <li>✔️ Record-Keeping & Reconciliations</li>
+      <li>✔️ Payroll Processing</li>
+      <li>✔️ Accounts Payable/Receivable Management</li>
+    </ul>
   </section>
 
   <section class="section" id="about">
     <h2>About Us</h2>
-    <p>Tax Ease Solution is a modern tax consultancy firm dedicated to simplifying taxation and financial compliance for individuals, freelancers, and businesses across Pakistan. Our focus is to provide timely, accurate, and transparent services that reduce stress and increase financial clarity. We embrace technology for efficient communication, secure document sharing, and offer personalized support tailored to each client’s needs.</p>
+    <p><strong>Tax Ease Solution</strong> is a dedicated tax and financial consultancy firm with a mission to simplify the complexities of Pakistan’s tax, accounting, and corporate regulatory environment. We offer individuals, businesses, and startups a trusted platform for complete compliance and professional advisory services.</p>
+    <p>Our team of experienced tax professionals and accountants is committed to delivering transparent, timely, and client-centric solutions. From income tax return filing to corporate structuring and bookkeeping, we strive to empower our clients through expert guidance, personalized service, and digital convenience.</p>
+    <p>Whether you're a salaried individual, a freelancer, a small business owner, or a growing enterprise — we’re here to make tax and financial management easy for you.</p>
   </section>
 
   <section class="section" id="contact">
     <h2>Contact Us</h2>
-    <p>📞 WhatsApp / Phone: <a href="tel:+923170615550">0317-0615550</a></p>
-    <p>📧 Email: <a href="mailto:complitax@gmail.com">complitax@gmail.com</a></p>
-    <p>🌐 Visit: <a href="https://www.taxeasesolution.com">www.taxeasesolution.com</a></p>
+    <p>📞 Phone: +92-317-0615550</p>
+    <p>📧 Email: complitax@gmail.com</p>
+    <p>🌐 Social Media: @taxeasesolution</p>
+    <div class="whatsapp">
+      <a href="https://wa.me/923170615550" target="_blank">Chat with us on WhatsApp</a>
+    </div>
   </section>
-
-  <a href="https://wa.me/923170615550" class="whatsapp-float" title="Chat on WhatsApp">💬</a>
 
   <footer>
     <p>&copy; 2025 Tax Ease Solution. All rights reserved.</p>
   </footer>
 </body>
 </html>
+
