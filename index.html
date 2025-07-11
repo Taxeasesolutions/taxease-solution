@@ -16,8 +16,27 @@
       background-color: #f4f7fa;
       color: #333;
     }
+    .banner {
+      background-color: #ffcc00;
+      color: #000;
+      padding: 0.5rem;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .banner span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 12s linear infinite;
+    }
+    @keyframes marquee {
+      0%   { transform: translate(0, 0); }
+      100% { transform: translate(-100%, 0); }
+    }
     header {
-      background-color: #004080;
+      background-color: #002d5c;
       padding: 1rem 2rem;
       color: #fff;
       position: sticky;
@@ -26,9 +45,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
     header h1 {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
     }
     nav a {
       color: #fff;
@@ -36,53 +56,82 @@
       text-decoration: none;
       font-weight: 600;
     }
-    .announcement {
-      background-color: #FFD700;
-      color: #000;
-      padding: 0.5rem 1rem;
-      text-align: center;
-      font-weight: bold;
-      animation: marquee 15s linear infinite;
-    }
-    @keyframes marquee {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
     .hero {
-      background: linear-gradient(rgba(0, 64, 128, 0.7), rgba(0, 64, 128, 0.7)), url('https://images.unsplash.com/photo-1604014237783-c942d4c94cd3');
+      background: linear-gradient(rgba(0, 45, 92, 0.8), rgba(0, 45, 92, 0.8)), url('https://images.unsplash.com/photo-1605902711622-cfb43c4437d4');
       background-size: cover;
       background-position: center;
       color: #fff;
-      padding: 4rem 2rem;
+      padding: 6rem 2rem;
       text-align: center;
     }
     .hero h2 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+    .hero a {
+      display: inline-block;
+      background: #ffcc00;
+      color: #000;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
     }
     .section {
       padding: 3rem 2rem;
       max-width: 1200px;
       margin: auto;
     }
-    .services-grid {
+    .services-grid, .benefits-grid, .expertise-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
     }
-    .card {
+    .card, .benefit-card, .expertise-card {
       background: #fff;
       padding: 1.5rem;
       border-radius: 12px;
       box-shadow: 0 5px 10px rgba(0,0,0,0.05);
       text-align: center;
     }
-    .card h3 {
+    .card h3, .benefit-card h3, .expertise-card h3 {
       margin-bottom: 1rem;
       color: #004080;
     }
+    .benefit-card img, .expertise-card img {
+      max-width: 80px;
+      margin-bottom: 1rem;
+    }
+    .testimonial {
+      background: #fff;
+      border-left: 5px solid #004080;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+    }
+    .testimonial h4 {
+      margin-top: 1rem;
+      color: #004080;
+    }
+    .process {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: #e6efff;
+    }
+    .process h2 {
+      color: #004080;
+      margin-bottom: 2rem;
+    }
+    .step {
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
     footer {
-      background: #004080;
+      background: #002d5c;
       color: #fff;
       text-align: center;
       padding: 1.5rem;
@@ -99,13 +148,12 @@
       font-size: 24px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
-    .whatsapp:hover {
-      background-color: #20c659;
-    }
   </style>
 </head>
 <body>
-  <div class="announcement">🔥 Early Clients Get Up to 20% Discount on All Tax Services! Limited Time Offer! 🔥</div>
+  <div class="banner">
+    <span>🔥 Early Clients Get Up to 20% Discount on All Tax Services! Limited Time Offer! 🔥</span>
+  </div>
 
   <header>
     <h1>Tax Ease Solution</h1>
@@ -117,8 +165,38 @@
   </header>
 
   <section class="hero">
-    <h2>File Your Tax Return with Confidence</h2>
-    <p>Professional Tax & Financial Reporting Services for Individuals and Businesses</p>
+    <h2>Expert Taxation & Accounting Services</h2>
+    <p>Certified. Compliant. Confidential. Your Tax Matters, Handled Professionally.</p>
+    <a href="#contact">Get Started Today</a>
+  </section>
+
+  <section class="section">
+    <h2 style="text-align:center; color: #004080;">Why Choose Tax Ease Solution?</h2>
+    <p style="max-width: 900px; margin: 1rem auto; text-align: center; font-size: 1.1rem; line-height: 1.6;">
+      Whether you're a salaried individual or an enterprise, our certified consultants ensure timely, accurate and stress-free tax & financial filing.
+    </p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <img src="https://img.icons8.com/ios-filled/100/briefcase.png" alt="FBR Registered">
+        <h3>FBR Registered</h3>
+        <p>Certified & recognized by Federal Board of Revenue.</p>
+      </div>
+      <div class="benefit-card">
+        <img src="https://img.icons8.com/ios-filled/100/data-in-both-directions.png" alt="Accurate Filing">
+        <h3>100% Accuracy</h3>
+        <p>Flawless documentation and compliant processes.</p>
+      </div>
+      <div class="benefit-card">
+        <img src="https://img.icons8.com/ios-filled/100/whatsapp.png" alt="Support">
+        <h3>Instant Support</h3>
+        <p>Quick responses via WhatsApp, email & phone.</p>
+      </div>
+      <div class="benefit-card">
+        <img src="https://img.icons8.com/ios-filled/100/money.png" alt="Affordable">
+        <h3>Affordable Pricing</h3>
+        <p>Best value packages with transparent costs.</p>
+      </div>
+    </div>
   </section>
 
   <section id="services" class="section">
@@ -126,20 +204,61 @@
     <div class="services-grid">
       <div class="card">
         <h3>Taxation</h3>
-        <p>Tax Planning, Advisory, Income & Sales Tax Return Filing, Compliance & Reporting</p>
+        <p>Filing Income & Sales Tax Returns, Planning, Advisory & Compliance</p>
       </div>
       <div class="card">
         <h3>Accounting</h3>
-        <p>Financial Statements, Ledger Maintenance, Reconciliations, Payroll & A/P A/R</p>
+        <p>Bookkeeping, Financial Statements, Ledgers, Payroll & Reconciliations</p>
       </div>
       <div class="card">
-        <h3>Corporate Services</h3>
-        <p>Business Registration, Statutory Compliance & Corporate Tax Filing</p>
+        <h3>Corporate Setup</h3>
+        <p>Business Incorporation, Compliance & SECP Reporting</p>
       </div>
       <div class="card">
-        <h3>NTN & Profile</h3>
-        <p>NTN Registration, IRIS Profile Update & Wealth Reconciliation</p>
+        <h3>NTN / IRIS</h3>
+        <p>NTN Creation, Wealth Statements, IRIS Profile & Reconciliation</p>
       </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 style="text-align:center; color: #004080;">Our Expertise</h2>
+    <div class="expertise-grid">
+      <div class="expertise-card">
+        <img src="https://img.icons8.com/ios-filled/100/tax.png" alt="Tax Law">
+        <h3>Tax Law Knowledge</h3>
+        <p>Expertise in Pakistan tax rules & regulatory environment.</p>
+      </div>
+      <div class="expertise-card">
+        <img src="https://img.icons8.com/ios-filled/100/accounting.png" alt="Financial Expertise">
+        <h3>Financial Clarity</h3>
+        <p>Reports that help you make informed business decisions.</p>
+      </div>
+      <div class="expertise-card">
+        <img src="https://img.icons8.com/ios-filled/100/compliance.png" alt="Regulatory Filing">
+        <h3>Compliance Ready</h3>
+        <p>All reports meet SECP & FBR standards for timely submission.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <h2>How We Work</h2>
+    <p class="step">1️⃣ Book a Free Consultation</p>
+    <p class="step">2️⃣ We Review Your Tax / Accounting Needs</p>
+    <p class="step">3️⃣ Submit Docs via WhatsApp / Email</p>
+    <p class="step">4️⃣ You Get Filed & Compliant — Stress Free!</p>
+  </section>
+
+  <section class="section">
+    <h2 style="text-align:center; color: #004080;">Client Testimonials</h2>
+    <div class="testimonial">
+      <p>“They helped me file returns quickly and explained everything in easy terms. Highly recommended!”</p>
+      <h4>— Adeel R., Freelancer</h4>
+    </div>
+    <div class="testimonial">
+      <p>“We’ve been using their services for two years — very professional, affordable and on time.”</p>
+      <h4>— Saima T., Startup Founder</h4>
     </div>
   </section>
 
