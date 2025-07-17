@@ -3,285 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tax Ease Solution</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-    body {
-      background-color: #f4f7fa;
-      color: #333;
-    }
-    .banner {
-      background-color: #ffcc00;
-      color: #000;
-      padding: 0.5rem;
-      text-align: center;
-      font-weight: bold;
-      font-size: 1.1rem;
-      white-space: nowrap;
-      overflow: hidden;
-    }
-    .banner span {
-      display: inline-block;
-      padding-left: 100%;
-      animation: marquee 12s linear infinite;
-    }
-    @keyframes marquee {
-      0%   { transform: translate(0, 0); }
-      100% { transform: translate(-100%, 0); }
-    }
-    header {
-      background-color: #002d5c;
-      padding: 1rem 2rem;
-      color: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    header h1 {
-      font-size: 1.7rem;
-    }
-    nav a {
-      color: #fff;
-      margin-left: 1.5rem;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .hero {
-      background: linear-gradient(rgba(0, 45, 92, 0.8), rgba(0, 45, 92, 0.8)), url('https://images.unsplash.com/photo-1605902711622-cfb43c4437d4');
-      background-size: cover;
-      background-position: center;
-      color: #fff;
-      padding: 6rem 2rem;
-      text-align: center;
-    }
-    .hero h2 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.3rem;
-      margin-bottom: 2rem;
-    }
-    .hero a {
-      display: inline-block;
-      background: #ffcc00;
-      color: #000;
-      padding: 0.8rem 1.5rem;
-      border-radius: 30px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-    .section {
-      padding: 3rem 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .services-grid, .benefits-grid, .expertise-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-    .card, .benefit-card, .expertise-card {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.05);
-      text-align: center;
-    }
-    .card h3, .benefit-card h3, .expertise-card h3 {
-      margin-bottom: 1rem;
-      color: #004080;
-    }
-    .benefit-card img, .expertise-card img {
-      max-width: 80px;
-      margin-bottom: 1rem;
-    }
-    .testimonial {
-      background: #fff;
-      border-left: 5px solid #004080;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.05);
-    }
-    .testimonial h4 {
-      margin-top: 1rem;
-      color: #004080;
-    }
-    .process {
-      text-align: center;
-      padding: 3rem 2rem;
-      background: #e6efff;
-    }
-    .process h2 {
-      color: #004080;
-      margin-bottom: 2rem;
-    }
-    .step {
-      margin-bottom: 1rem;
-      font-weight: 500;
-    }
-    footer {
-      background: #002d5c;
-      color: #fff;
-      text-align: center;
-      padding: 1.5rem;
-    }
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      border-radius: 50%;
-      padding: 15px;
-      text-align: center;
-      font-size: 24px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-  </style>
+  <title>Tax Ease Solution - FBR-Compliant Tax Filing in Pakistan</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
 </head>
-<body>
-  <div class="banner">
-    <span>🔥 Early Clients Get Up to 20% Discount on All Tax Services! Limited Time Offer! 🔥</span>
-  </div>
-
-  <header>
-    <h1>Tax Ease Solution</h1>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h2>Expert Taxation & Accounting Services</h2>
-    <p>Certified. Compliant. Confidential. Your Tax Matters, Handled Professionally.</p>
-    <a href="#contact">Get Started Today</a>
+<body class="bg-white text-gray-800">
+  <!-- Hero Section -->
+  <section class="bg-blue-900 text-white py-20 px-4 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Pakistan's Simplest Online Tax Filing Service</h1>
+    <p class="text-lg md:text-xl mb-6">No paperwork, just peace of mind. FBR-compliant and professionally managed by experts.</p>
+    <a href="#start" class="bg-yellow-400 hover:bg-yellow-300 text-black font-semibold py-3 px-6 rounded-full text-lg">Start Filing Now</a>
   </section>
 
-  <section class="section">
-    <h2 style="text-align:center; color: #004080;">Why Choose Tax Ease Solution?</h2>
-    <p style="max-width: 900px; margin: 1rem auto; text-align: center; font-size: 1.1rem; line-height: 1.6;">
-      Whether you're a salaried individual or an enterprise, our certified consultants ensure timely, accurate and stress-free tax & financial filing.
-    </p>
-    <div class="benefits-grid">
-      <div class="benefit-card">
-        <img src="https://img.icons8.com/ios-filled/100/briefcase.png" alt="FBR Registered">
-        <h3>FBR Registered</h3>
-        <p>Certified & recognized by Federal Board of Revenue.</p>
+  <!-- How It Works -->
+  <section id="start" class="py-16 px-6 md:px-20">
+    <h2 class="text-3xl font-bold text-center mb-10">How It Works</h2>
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="text-center">
+        <div class="text-5xl text-blue-700 font-bold mb-4">1</div>
+        <h3 class="text-xl font-semibold mb-2">Sign Up</h3>
+        <p>Create your account in minutes with your CNIC and contact info.</p>
       </div>
-      <div class="benefit-card">
-        <img src="https://img.icons8.com/ios-filled/100/data-in-both-directions.png" alt="Accurate Filing">
-        <h3>100% Accuracy</h3>
-        <p>Flawless documentation and compliant processes.</p>
+      <div class="text-center">
+        <div class="text-5xl text-blue-700 font-bold mb-4">2</div>
+        <h3 class="text-xl font-semibold mb-2">Upload Docs</h3>
+        <p>Submit income, expense, and withholding data securely via mobile or desktop.</p>
       </div>
-      <div class="benefit-card">
-        <img src="https://img.icons8.com/ios-filled/100/whatsapp.png" alt="Support">
-        <h3>Instant Support</h3>
-        <p>Quick responses via WhatsApp, email & phone.</p>
-      </div>
-      <div class="benefit-card">
-        <img src="https://img.icons8.com/ios-filled/100/money.png" alt="Affordable">
-        <h3>Affordable Pricing</h3>
-        <p>Best value packages with transparent costs.</p>
+      <div class="text-center">
+        <div class="text-5xl text-blue-700 font-bold mb-4">3</div>
+        <h3 class="text-xl font-semibold mb-2">Get Filed</h3>
+        <p>Our experts prepare and file your return with FBR, with 100% accuracy guarantee.</p>
       </div>
     </div>
   </section>
 
-  <section id="services" class="section">
-    <h2 style="text-align:center; margin-bottom: 2rem; color: #004080;">Our Services</h2>
-    <div class="services-grid">
-      <div class="card">
-        <h3>Taxation</h3>
-        <p>Filing Income & Sales Tax Returns, Planning, Advisory & Compliance</p>
+  <!-- Services Section -->
+  <section class="bg-gray-100 py-16 px-6 md:px-20">
+    <h2 class="text-3xl font-bold text-center mb-10">Our Services</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold mb-2">Income Tax Return Filing</h3>
+        <p>End-to-end ITR filing for salaried, business, freelancers and property holders.</p>
       </div>
-      <div class="card">
-        <h3>Accounting</h3>
-        <p>Bookkeeping, Financial Statements, Ledgers, Payroll & Reconciliations</p>
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold mb-2">FBR Registration</h3>
+        <p>Quick and verified NTN registration for individuals and businesses.</p>
       </div>
-      <div class="card">
-        <h3>Corporate Setup</h3>
-        <p>Business Incorporation, Compliance & SECP Reporting</p>
-      </div>
-      <div class="card">
-        <h3>NTN / IRIS</h3>
-        <p>NTN Creation, Wealth Statements, IRIS Profile & Reconciliation</p>
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold mb-2">Withholding Tax Calculation</h3>
+        <p>We help compute and reconcile your advance/withholding tax efficiently.</p>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <h2 style="text-align:center; color: #004080;">Our Expertise</h2>
-    <div class="expertise-grid">
-      <div class="expertise-card">
-        <img src="https://img.icons8.com/ios-filled/100/tax.png" alt="Tax Law">
-        <h3>Tax Law Knowledge</h3>
-        <p>Expertise in Pakistan tax rules & regulatory environment.</p>
-      </div>
-      <div class="expertise-card">
-        <img src="https://img.icons8.com/ios-filled/100/accounting.png" alt="Financial Expertise">
-        <h3>Financial Clarity</h3>
-        <p>Reports that help you make informed business decisions.</p>
-      </div>
-      <div class="expertise-card">
-        <img src="https://img.icons8.com/ios-filled/100/compliance.png" alt="Regulatory Filing">
-        <h3>Compliance Ready</h3>
-        <p>All reports meet SECP & FBR standards for timely submission.</p>
-      </div>
+  <!-- Testimonials -->
+  <section class="py-16 px-6 md:px-20 text-center">
+    <h2 class="text-3xl font-bold mb-10">What Our Clients Say</h2>
+    <div class="text-gray-700 italic max-w-2xl mx-auto">
+      <p>“Tax Ease Solution filed my tax in one day without a single visit to office. Amazing service!”</p>
+      <span class="block mt-4 font-semibold">— Ahmed R., Lahore</span>
     </div>
   </section>
 
-  <section class="process">
-    <h2>How We Work</h2>
-    <p class="step">1️⃣ Book a Free Consultation</p>
-    <p class="step">2️⃣ We Review Your Tax / Accounting Needs</p>
-    <p class="step">3️⃣ Submit Docs via WhatsApp / Email</p>
-    <p class="step">4️⃣ You Get Filed & Compliant — Stress Free!</p>
-  </section>
-
-  <section class="section">
-    <h2 style="text-align:center; color: #004080;">Client Testimonials</h2>
-    <div class="testimonial">
-      <p>“They helped me file returns quickly and explained everything in easy terms. Highly recommended!”</p>
-      <h4>— Adeel R., Freelancer</h4>
-    </div>
-    <div class="testimonial">
-      <p>“We’ve been using their services for two years — very professional, affordable and on time.”</p>
-      <h4>— Saima T., Startup Founder</h4>
-    </div>
-  </section>
-
-  <section id="about" class="section">
-    <h2 style="text-align:center; color: #004080;">About Us</h2>
-    <p style="max-width: 800px; margin: auto; text-align: center; line-height: 1.7;">
-      Tax Ease Solution is your trusted partner for reliable tax consultancy and financial reporting. With years of experience and dedication, we support individuals, startups, and companies in navigating Pakistan’s tax and corporate compliance landscape. We believe in transparency, personalized support, and results-driven service. Our commitment is to make taxation and reporting stress-free and compliant for everyone.
-    </p>
-  </section>
-
-  <section id="contact" class="section">
-    <h2 style="text-align:center; color: #004080;">Contact Us</h2>
-    <p style="text-align:center; font-size: 1.1rem;">
-      📞 <strong>Phone:</strong> <a href="tel:+923170615550">0317-0615550</a><br>
-      📧 <strong>Email:</strong> <a href="mailto:complitax@gmail.com">complitax@gmail.com</a><br>
-      💬 <strong>WhatsApp:</strong> <a href="https://wa.me/923170615550" target="_blank">Chat Now</a>
-    </p>
-  </section>
-
-  <a href="https://wa.me/923170615550" class="whatsapp" target="_blank">💬</a>
-
-  <footer>
-    <p>&copy; 2025 Tax Ease Solution. All Rights Reserved.</p>
+  <!-- CTA Footer -->
+  <footer class="bg-blue-900 text-white py-12 px-6 text-center">
+    <h3 class="text-2xl font-bold mb-4">Ready to File Your Return?</h3>
+    <p class="mb-6">Get expert help with full FBR compliance and peace of mind.</p>
+    <a href="tel:+923001234567" class="bg-yellow-400 text-black font-bold py-3 px-6 rounded-full">Call Us: 0300‑1234567</a>
+    <p class="mt-4 text-sm">or email: <a href="mailto:complitax@gmail.com" class="underline">complitax@gmail.com</a></p>
   </footer>
 </body>
 </html>
