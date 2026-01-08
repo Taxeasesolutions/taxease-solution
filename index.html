@@ -3,361 +3,177 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tax Ease Solution | NTN & Tax Filing Experts</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-
+  <title>Tax Ease Solution | Tax & SECP Experts</title>
+  <meta name="description" content="Professional Tax, SECP, NTN, Sales Tax & Compliance Services in Pakistan. Trusted advisors for individuals & businesses." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', sans-serif; }
-    .modal { background: rgba(0,0,0,0.7); }
+    :root{
+      --primary:#0f766e;
+      --secondary:#14b8a6;
+      --dark:#0f172a;
+      --light:#f8fafc;
+      --gray:#64748b;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',sans-serif;background:var(--light);color:var(--dark);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+
+    header{
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      color:#fff;
+      padding:80px 20px;
+    }
+    .container{max-width:1200px;margin:auto}
+    nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:60px}
+    nav h1{font-size:26px;font-weight:800}
+    nav ul{display:flex;gap:25px;list-style:none}
+    nav ul li a{font-weight:500;opacity:.9}
+
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+    .hero h2{font-size:48px;font-weight:800;margin-bottom:20px}
+    .hero p{font-size:18px;opacity:.95;margin-bottom:30px}
+    .btn{
+      display:inline-block;
+      background:#fff;
+      color:var(--primary);
+      padding:14px 28px;
+      border-radius:50px;
+      font-weight:600;
+      box-shadow:0 10px 25px rgba(0,0,0,.15);
+    }
+
+    section{padding:90px 20px}
+    .section-title{text-align:center;margin-bottom:60px}
+    .section-title h3{font-size:36px;font-weight:800}
+    .section-title p{color:var(--gray);margin-top:10px}
+
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+    .card{
+      background:#fff;
+      border-radius:20px;
+      padding:35px 30px;
+      box-shadow:0 15px 40px rgba(15,23,42,.08);
+      transition:.3s;
+    }
+    .card:hover{transform:translateY(-8px)}
+    .card h4{font-size:22px;margin-bottom:12px}
+    .card p{color:var(--gray)}
+
+    .why{
+      background:linear-gradient(180deg,#f0fdfa,#ffffff);
+    }
+
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;text-align:center}
+    .stat h5{font-size:42px;color:var(--primary)}
+    .stat span{color:var(--gray)}
+
+    .cta{
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      color:#fff;
+      text-align:center;
+      border-radius:30px;
+      padding:70px 30px;
+    }
+    .cta h3{font-size:38px;margin-bottom:15px}
+    .cta p{opacity:.95;margin-bottom:30px}
+
+    footer{
+      background:#020617;
+      color:#cbd5f5;
+      padding:40px 20px;
+    }
+    footer .container{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+    footer h4{color:#fff;margin-bottom:10px}
+
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .hero h2{font-size:38px}
+    }
   </style>
 </head>
+<body>
 
-<body class="bg-slate-50 text-slate-800">
-
-<!-- ================= NAVBAR ================= -->
-<nav class="bg-white shadow sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <div class="text-2xl font-bold text-blue-800">
-      Tax Ease <span class="text-yellow-500">Solution</span>
-    </div>
-
-    <div class="hidden md:flex items-center space-x-6 font-medium">
-      <a href="#" class="hover:text-blue-700">Home</a>
-      <a href="#" class="hover:text-blue-700">Services</a>
-      <a href="#" class="hover:text-blue-700">Pricing</a>
-      <a href="#" class="hover:text-blue-700">Why Us</a>
-      <a href="#" class="hover:text-blue-700">FAQ</a>
-      <a href="#" class="hover:text-blue-700">Contact</a>
-      <button onclick="openModal('loginModal')" class="border border-blue-700 px-4 py-1 rounded hover:bg-blue-700 hover:text-white">Login</button>
-      <button onclick="openModal('signupModal')" class="bg-blue-700 text-white px-4 py-1 rounded hover:bg-blue-800">Sign Up</button>
-    </div>
-  </div>
-</nav>
-
-<!-- ================= HERO ================= -->
-<section class="bg-gradient-to-r from-blue-900 to-blue-700 text-white">
-  <div class="max-w-7xl mx-auto px-6 py-24 text-center">
-    <h1 class="text-4xl md:text-5xl font-bold leading-tight">
-      New to Taxes?
-    </h1>
-
-    <p class="text-2xl font-semibold text-yellow-400 mt-4">
-      Get Your NTN Registered <br>
-      <span class="text-3xl text-yellow-300">Completely Free</span>
-    </p>
-
-    <p class="mt-6 max-w-3xl mx-auto text-lg text-blue-100">
-      Whether you are salaried, self-employed, or running a business,
-      <strong>Tax Ease Solution</strong> ensures fast, secure and hassle-free tax compliance.
-    </p>
-
-    <a href="tel:03170615550"
-       class="inline-block mt-8 px-8 py-4 bg-yellow-400 text-blue-900 font-bold rounded-full hover:bg-yellow-300 transition">
-      📞 Call 0317-0615550
-    </a>
-  </div>
-</section>
-
-<!-- ================= HOW IT WORKS ================= -->
-<section class="py-20 bg-white">
-  <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center text-blue-800 mb-14">
-      How It Works
-    </h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-      <div class="p-8 border rounded-xl hover:shadow-lg transition">
-        <div class="text-5xl mb-4">📄</div>
-        <h3 class="text-xl font-semibold mb-2">Submit Information</h3>
-        <p class="text-sm text-slate-600">
-          Share basic income or business details with us.
-        </p>
-      </div>
-
-      <div class="p-8 border rounded-xl hover:shadow-lg transition">
-        <div class="text-5xl mb-4">📤</div>
-        <h3 class="text-xl font-semibold mb-2">Upload Documents</h3>
-        <p class="text-sm text-slate-600">
-          CNIC, salary slip or bank details – fully secure.
-        </p>
-      </div>
-
-      <div class="p-8 border rounded-xl hover:shadow-lg transition">
-        <div class="text-5xl mb-4">✅</div>
-        <h3 class="text-xl font-semibold mb-2">We File For You</h3>
-        <p class="text-sm text-slate-600">
-          Our experts file your case directly with FBR.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= SERVICES ================= -->
-<section class="bg-slate-100 py-20">
-  <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center text-blue-800 mb-14">
-      Our Services
-    </h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="bg-white p-8 rounded-xl shadow hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold mb-3">NTN Registration</h3>
-        <p class="text-sm text-slate-600">
-          Fast & reliable NTN registration with FBR.
-        </p>
-      </div>
-
-      <div class="bg-white p-8 rounded-xl shadow hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold mb-3">Income Tax Filing</h3>
-        <p class="text-sm text-slate-600">
-          For salaried individuals, freelancers & businesses.
-        </p>
-      </div>
-
-      <div class="bg-white p-8 rounded-xl shadow hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold mb-3">Business Registration</h3>
-        <p class="text-sm text-slate-600">
-          SECP & FBR registrations made simple.
-        </p>
-      </div>
-
-      <div class="bg-white p-8 rounded-xl shadow hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold mb-3">Tax Notices & Compliance</h3>
-        <p class="text-sm text-slate-600">
-          Complete handling of FBR notices & audits.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer class="bg-blue-900 text-gray-200">
-  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-
-    <div>
-      <h2 class="text-2xl font-bold text-white mb-3">
-        Tax Ease Solution
-      </h2>
-      <p class="text-sm">
-        Your trusted partner for taxation, accounting & compliance services in Pakistan.
-      </p>
-    </div>
-
-    <div>
-      <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
-      <p class="mb-2">
-        📧 <a href="mailto:complitax@gmail.com" class="text-yellow-400 hover:underline">
-          complitax@gmail.com
-        </a>
-      </p>
-      <p>
-        📞 <a href="tel:+923170615550" class="text-yellow-400 hover:underline">
-          +92 317 0615550
-        </a>
-      </p>
-    </div>
-
-    <div>
-      <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="#" class="hover:text-yellow-400">Services</a></li>
-        <li><a href="#" class="hover:text-yellow-400">Why Choose Us</a></li>
-        <li><a href="#" class="hover:text-yellow-400">Contact</a></li>
+<header>
+  <div class="container">
+    <nav>
+      <h1>Tax Ease Solution</h1>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
+    </nav>
+
+    <div class="hero">
+      <div>
+        <h2>Smart Tax & SECP Solutions for Growing Businesses</h2>
+        <p>We simplify taxation, SECP compliance, and business registrations so you can focus on growth — stress free and compliant.</p>
+        <a href="#contact" class="btn">Get Free Consultation</a>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f" alt="Tax Services" style="width:100%;border-radius:25px;box-shadow:0 20px 40px rgba(0,0,0,.25)">
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="services">
+  <div class="container">
+    <div class="section-title">
+      <h3>Our Core Services</h3>
+      <p>End-to-end tax and corporate compliance solutions</p>
     </div>
 
+    <div class="cards">
+      <div class="card"><h4>NTN & Tax Registration</h4><p>Fast and hassle-free NTN, FBR profile setup and documentation.</p></div>
+      <div class="card"><h4>Income & Sales Tax Filing</h4><p>Accurate monthly, quarterly & annual tax filings with planning.</p></div>
+      <div class="card"><h4>SECP Company Registration</h4><p>Private Limited, SMC, LLP & partnership registrations.</p></div>
+      <div class="card"><h4>SECP Annual Compliance</h4><p>Annual returns, changes in directors, share transfers.</p></div>
+      <div class="card"><h4>Tax Notices & Audit Support</h4><p>Professional representation before FBR & authorities.</p></div>
+      <div class="card"><h4>Business Advisory</h4><p>Strategic advice for startups, freelancers & SMEs.</p></div>
+    </div>
   </div>
+</section>
 
-  <div class="border-t border-blue-700 text-center py-4 text-sm">
-    © 2025 Tax Ease Solution. All rights reserved.
+<section id="why" class="why">
+  <div class="container">
+    <div class="section-title">
+      <h3>Why Choose Tax Ease Solution</h3>
+      <p>Professional. Reliable. Result-driven.</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><h5>6+</h5><span>Years Experience</span></div>
+      <div class="stat"><h5>1000+</h5><span>Returns Filed</span></div>
+      <div class="stat"><h5>98%</h5><span>Client Satisfaction</span></div>
+      <div class="stat"><h5>100%</h5><span>Compliance Focus</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="cta">
+      <h3>Let’s Handle Your Tax & SECP Matters</h3>
+      <p>Talk to our experts today and get a free initial consultation.</p>
+      <a href="mailto:complitax@gmail.com" class="btn">Email Us Now</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <h4>Tax Ease Solution</h4>
+      <p>Professional Taxation & Corporate Compliance Services in Pakistan.</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>📞 0317-0615550<br>📧 complitax@gmail.com</p>
+    </div>
   </div>
 </footer>
 
-<!-- ================= MODALS ================= -->
-<div id="loginModal" class="modal fixed inset-0 hidden items-center justify-center">
-  <div class="bg-white p-6 rounded w-80">
-    <h2 class="text-xl font-bold mb-4">Login</h2>
-    <input class="w-full border p-2 mb-3 rounded" placeholder="Email or Phone">
-    <input type="password" class="w-full border p-2 mb-3 rounded" placeholder="Password">
-    <button class="w-full bg-blue-800 text-white py-2 rounded">Login</button>
-    <button onclick="closeModal('loginModal')" class="mt-2 text-sm text-blue-600">Cancel</button>
-  </div>
-</div>
-
-<div id="signupModal" class="modal fixed inset-0 hidden items-center justify-center">
-  <div class="bg-white p-6 rounded w-80">
-    <h2 class="text-xl font-bold mb-4">Sign Up</h2>
-    <input class="w-full border p-2 mb-3 rounded" placeholder="Full Name">
-    <input class="w-full border p-2 mb-3 rounded" placeholder="Email or Phone">
-    <input type="password" class="w-full border p-2 mb-3 rounded" placeholder="Password">
-    <button class="w-full bg-blue-800 text-white py-2 rounded">Create Account</button>
-    <button onclick="closeModal('signupModal')" class="mt-2 text-sm text-blue-600">Cancel</button>
-  </div>
-</div>
-
-<script>
-function openModal(id){
-  document.getElementById(id).classList.remove('hidden');
-  document.getElementById(id).classList.add('flex');
-}
-function closeModal(id){
-  document.getElementById(id).classList.add('hidden');
-  document.getElementById(id).classList.remove('flex');
-}
-</script>
-
 </body>
 </html>
-<!-- ================= ADVANCED SECP SERVICES ================= -->
-<section class="py-24 bg-gradient-to-br from-slate-50 to-slate-100">
-  <div class="max-w-7xl mx-auto px-6">
-
-    <!-- Heading -->
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-blue-800 mb-4">
-        SECP Corporate & Compliance Services
-      </h2>
-      <p class="max-w-3xl mx-auto text-slate-600 text-lg">
-        End-to-end company registration and statutory compliance services
-        under the Securities & Exchange Commission of Pakistan (SECP).
-      </p>
-    </div>
-
-    <!-- Tabs -->
-    <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
-
-      <!-- Tab Buttons -->
-      <div class="flex flex-col md:flex-row border-b">
-        <button onclick="openSECP('registration')"
-          class="secp-tab px-6 py-4 font-semibold text-blue-800 border-b-4 border-blue-800 bg-blue-50">
-          🏢 Company Registration
-        </button>
-        <button onclick="openSECP('compliance')"
-          class="secp-tab px-6 py-4 font-semibold text-slate-600 hover:bg-slate-50">
-          📑 Annual Compliance
-        </button>
-        <button onclick="openSECP('forms')"
-          class="secp-tab px-6 py-4 font-semibold text-slate-600 hover:bg-slate-50">
-          🧾 SECP Forms & Filings
-        </button>
-      </div>
-
-      <!-- TAB CONTENT -->
-
-      <!-- Registration -->
-      <div id="registration" class="secp-content p-10">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h3 class="text-2xl font-bold mb-4">
-              Company Registration with SECP
-            </h3>
-            <p class="text-slate-600 mb-6">
-              We manage the complete lifecycle of company incorporation,
-              ensuring legal accuracy, fast approvals, and zero hassle.
-            </p>
-
-            <ul class="space-y-3 text-slate-700">
-              <li>✔ Private Limited Company</li>
-              <li>✔ Single Member Company (SMC)</li>
-              <li>✔ LLP & Partnership Registration</li>
-              <li>✔ Name Availability & Reservation</li>
-              <li>✔ MOA / AOA Drafting</li>
-            </ul>
-          </div>
-
-          <div class="bg-blue-50 p-8 rounded-xl">
-            <h4 class="font-semibold text-lg mb-4 text-blue-800">
-              Why Choose Us?
-            </h4>
-            <p class="text-sm text-slate-600">
-              Our professionals ensure your company is incorporated
-              correctly from day one — avoiding penalties and rejections.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Compliance -->
-      <div id="compliance" class="secp-content hidden p-10">
-        <h3 class="text-2xl font-bold mb-6">
-          Annual SECP Compliance Management
-        </h3>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="border rounded-xl p-6 hover:shadow-lg transition">
-            <h4 class="font-semibold mb-2">Annual Return Filing</h4>
-            <p class="text-sm text-slate-600">
-              Timely filing to keep your company Active & Compliant.
-            </p>
-          </div>
-
-          <div class="border rounded-xl p-6 hover:shadow-lg transition">
-            <h4 class="font-semibold mb-2">Director & Shareholding Changes</h4>
-            <p class="text-sm text-slate-600">
-              Accurate reporting of changes as per SECP requirements.
-            </p>
-          </div>
-
-          <div class="border rounded-xl p-6 hover:shadow-lg transition">
-            <h4 class="font-semibold mb-2">Penalty Avoidance</h4>
-            <p class="text-sm text-slate-600">
-              We track deadlines to protect you from late filing penalties.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Forms -->
-      <div id="forms" class="secp-content hidden p-10">
-        <h3 class="text-2xl font-bold mb-6">
-          SECP Statutory Forms Handling
-        </h3>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <ul class="space-y-3 text-slate-700">
-            <li>📄 <strong>Form A</strong> – Annual Return</li>
-            <li>📄 <strong>Form 9</strong> – Change of Directors</li>
-            <li>📄 <strong>Form 19</strong> – Consent of Directors</li>
-            <li>📄 Other SECP filings & amendments</li>
-          </ul>
-
-          <div class="bg-slate-50 p-6 rounded-xl">
-            <p class="text-sm text-slate-600">
-              Each form is prepared, reviewed, and filed by experienced
-              professionals to ensure complete legal compliance.
-            </p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- CTA -->
-    <div class="text-center mt-16">
-      <a href="tel:+923170615550"
-         class="inline-block px-10 py-4 bg-blue-800 text-white font-semibold rounded-full hover:bg-blue-900 transition">
-        📞 Talk to an SECP Expert
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ================= SECP TABS SCRIPT ================= -->
-<script>
-function openSECP(tab) {
-  document.querySelectorAll('.secp-content').forEach(el => el.classList.add('hidden'));
-  document.getElementById(tab).classList.remove('hidden');
-
-  document.querySelectorAll('.secp-tab').forEach(btn => {
-    btn.classList.remove('border-b-4','border-blue-800','bg-blue-50','text-blue-800');
-    btn.classList.add('text-slate-600');
-  });
-
-  event.target.classList.add('border-b-4','border-blue-800','bg-blue-50','text-blue-800');
-}
-</script>
