@@ -86,22 +86,6 @@
     footer .container{display:grid;grid-template-columns:1fr 1fr;gap:30px}
     footer h4{color:#fff;margin-bottom:10px}
 
-    /* WhatsApp Floating Button */
-    .whatsapp-button{
-      position:fixed;
-      bottom:25px;
-      right:25px;
-      background:#25D366;
-      color:white;
-      padding:15px 22px;
-      border-radius:50px;
-      font-weight:600;
-      box-shadow:0 12px 30px rgba(0,0,0,.3);
-      z-index:999;
-      font-size:16px;
-      text-align:center;
-    }
-
     @media(max-width:900px){
       .hero{grid-template-columns:1fr}
       .hero h2{font-size:38px}
@@ -125,7 +109,7 @@
       <div>
         <h2>Smart Tax & SECP Solutions for Growing Businesses</h2>
         <p>We simplify taxation, SECP compliance, and business registrations so you can focus on growth — stress free and compliant.</p>
-        <a href="https://wa.me/923170615550?text=Hello%20Tax%20Ease%20Solution,%20I%20need%20consultation%20regarding%20Tax%20or%20SECP%20services.%20Name:%20Business%20Type:" class="btn" target="_blank">Get Free WhatsApp Consultation</a>
+        <a href="javascript:void(0);" class="btn" onclick="openWhatsAppChat()">Start Free Consultation</a>
       </div>
       <div>
         <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f" alt="Tax Services" style="width:100%;border-radius:25px;box-shadow:0 20px 40px rgba(0,0,0,.25)">
@@ -178,8 +162,16 @@
   </div>
 </section>
 
-<!-- Floating WhatsApp Button -->
-<a href="https://wa.me/923170615550?text=Hello%20Tax%20Ease%20Solution,%20I%20need%20consultation%20regarding%20Tax%20or%20SECP%20services.%20Name:%20Business%20Type:" class="whatsapp-button" target="_blank">💬 WhatsApp Consultation</a>
+<!-- WhatsApp Chatbot Integration -->
+<script>
+function openWhatsAppChat(){
+  var number = '+923170615550';
+  var greeting = '👋 Welcome to Tax Ease Solution! Please select a service by replying with the number:\n1️⃣ NTN Registration\n2️⃣ Tax Filing\n3️⃣ SECP Registration\n4️⃣ Audit / Notice\n5️⃣ Talk to Consultant';
+  var prefilled = 'Hello Tax Ease Solution, my details are:\nName:\nBusiness Type:\nService Required:';
+  var url = 'https://wa.me/' + number.replace('+','') + '?text=' + encodeURIComponent(prefilled + '\n\n' + greeting);
+  window.open(url, '_blank');
+}
+</script>
 
 <footer>
   <div class="container">
