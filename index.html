@@ -212,3 +212,152 @@ function closeModal(id){
 
 </body>
 </html>
+<!-- ================= ADVANCED SECP SERVICES ================= -->
+<section class="py-24 bg-gradient-to-br from-slate-50 to-slate-100">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Heading -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-blue-800 mb-4">
+        SECP Corporate & Compliance Services
+      </h2>
+      <p class="max-w-3xl mx-auto text-slate-600 text-lg">
+        End-to-end company registration and statutory compliance services
+        under the Securities & Exchange Commission of Pakistan (SECP).
+      </p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+
+      <!-- Tab Buttons -->
+      <div class="flex flex-col md:flex-row border-b">
+        <button onclick="openSECP('registration')"
+          class="secp-tab px-6 py-4 font-semibold text-blue-800 border-b-4 border-blue-800 bg-blue-50">
+          🏢 Company Registration
+        </button>
+        <button onclick="openSECP('compliance')"
+          class="secp-tab px-6 py-4 font-semibold text-slate-600 hover:bg-slate-50">
+          📑 Annual Compliance
+        </button>
+        <button onclick="openSECP('forms')"
+          class="secp-tab px-6 py-4 font-semibold text-slate-600 hover:bg-slate-50">
+          🧾 SECP Forms & Filings
+        </button>
+      </div>
+
+      <!-- TAB CONTENT -->
+
+      <!-- Registration -->
+      <div id="registration" class="secp-content p-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h3 class="text-2xl font-bold mb-4">
+              Company Registration with SECP
+            </h3>
+            <p class="text-slate-600 mb-6">
+              We manage the complete lifecycle of company incorporation,
+              ensuring legal accuracy, fast approvals, and zero hassle.
+            </p>
+
+            <ul class="space-y-3 text-slate-700">
+              <li>✔ Private Limited Company</li>
+              <li>✔ Single Member Company (SMC)</li>
+              <li>✔ LLP & Partnership Registration</li>
+              <li>✔ Name Availability & Reservation</li>
+              <li>✔ MOA / AOA Drafting</li>
+            </ul>
+          </div>
+
+          <div class="bg-blue-50 p-8 rounded-xl">
+            <h4 class="font-semibold text-lg mb-4 text-blue-800">
+              Why Choose Us?
+            </h4>
+            <p class="text-sm text-slate-600">
+              Our professionals ensure your company is incorporated
+              correctly from day one — avoiding penalties and rejections.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Compliance -->
+      <div id="compliance" class="secp-content hidden p-10">
+        <h3 class="text-2xl font-bold mb-6">
+          Annual SECP Compliance Management
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="border rounded-xl p-6 hover:shadow-lg transition">
+            <h4 class="font-semibold mb-2">Annual Return Filing</h4>
+            <p class="text-sm text-slate-600">
+              Timely filing to keep your company Active & Compliant.
+            </p>
+          </div>
+
+          <div class="border rounded-xl p-6 hover:shadow-lg transition">
+            <h4 class="font-semibold mb-2">Director & Shareholding Changes</h4>
+            <p class="text-sm text-slate-600">
+              Accurate reporting of changes as per SECP requirements.
+            </p>
+          </div>
+
+          <div class="border rounded-xl p-6 hover:shadow-lg transition">
+            <h4 class="font-semibold mb-2">Penalty Avoidance</h4>
+            <p class="text-sm text-slate-600">
+              We track deadlines to protect you from late filing penalties.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Forms -->
+      <div id="forms" class="secp-content hidden p-10">
+        <h3 class="text-2xl font-bold mb-6">
+          SECP Statutory Forms Handling
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <ul class="space-y-3 text-slate-700">
+            <li>📄 <strong>Form A</strong> – Annual Return</li>
+            <li>📄 <strong>Form 9</strong> – Change of Directors</li>
+            <li>📄 <strong>Form 19</strong> – Consent of Directors</li>
+            <li>📄 Other SECP filings & amendments</li>
+          </ul>
+
+          <div class="bg-slate-50 p-6 rounded-xl">
+            <p class="text-sm text-slate-600">
+              Each form is prepared, reviewed, and filed by experienced
+              professionals to ensure complete legal compliance.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-16">
+      <a href="tel:+923170615550"
+         class="inline-block px-10 py-4 bg-blue-800 text-white font-semibold rounded-full hover:bg-blue-900 transition">
+        📞 Talk to an SECP Expert
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= SECP TABS SCRIPT ================= -->
+<script>
+function openSECP(tab) {
+  document.querySelectorAll('.secp-content').forEach(el => el.classList.add('hidden'));
+  document.getElementById(tab).classList.remove('hidden');
+
+  document.querySelectorAll('.secp-tab').forEach(btn => {
+    btn.classList.remove('border-b-4','border-blue-800','bg-blue-50','text-blue-800');
+    btn.classList.add('text-slate-600');
+  });
+
+  event.target.classList.add('border-b-4','border-blue-800','bg-blue-50','text-blue-800');
+}
+</script>
