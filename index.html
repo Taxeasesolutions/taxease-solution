@@ -2390,3 +2390,194 @@ document.addEventListener("keydown",function(e){
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pakistan Tax Calculator (Updated Ordinance, 2001)</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f4f6f9; margin: 0; padding: 20px; }
+    .container { max-width: 650px; margin: 0 auto; background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    h2 { color: #1e3a8a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 0; }
+    .form-group { margin-bottom: 15px; }
+    label { display: block; font-weight: bold; margin-bottom: 5px; color: #334155; }
+    input, select { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 5px; box-sizing: border-box; font-size: 15px; }
+    button { width: 100%; background-color: #2563eb; color: white; padding: 12px; border: none; border-radius: 5px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+    button:hover { background-color: #1d4ed8; }
+    .result-box { margin-top: 20px; padding: 15px; background-color: #eff6ff; border-left: 4px solid #2563eb; border-radius: 4px; display: none; }
+    .result-box p { margin: 5px 0; font-size: 16px; color: #1e293b; }
+    .result-box span { font-weight: bold; color: #0f172a; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Income Tax Calculator</h2>
+  
+  <div class="form-group">
+    <label for="taxSection">Select Tax Category / Section:</label>
+    <select id="taxSection" onchange="toggleInputs()">
+      <option value="149">Salaried Individual (Section 149)</option>
+      <option value="153">Goods, Services & Contracts (Section 153)</option>
+      <option value="154">Exports Proceeds (Section 154 / 154A)</option>
+      <option value="155">Rent of Immovable Property (Section 155)</option>
+    </select>
+  </div>
+
+  <!-- Salaried Inputs -->
+  <div id="salariedGroup" class="form-group">
+    <label for="salaryInput">Monthly Salary (PKR):</label>
+    <input type="number" id="salaryInput" placeholder="e.g. 150000" />
+  </div>
+
+  <!-- Sec 153 Inputs -->
+  <div id="sec153Group" class="form-group" style="display: none;">
+    <label for="subCategory153">Category:</label>
+    <select id="subCategory153">
+      <option value="goods_company">Sale of Goods (Company - 5% Filer / 10% Non-Filer)</option>
+      <option value="goods_other">Sale of Goods (Individual/AOP - 5.5% Filer / 11% Non-Filer)</option>
+      <option value="services_general">Services (General - 7% Filer / 14% Non-Filer)</option>
+      <option value="services_it">Services (IT/ITeS - 4% Filer / 8% Non-Filer)</option>
+      <option value="contracts_company">Execution of Contracts (Company - 7.5% Filer / 15% Non-Filer)</option>
+      <option value="contracts_other">Execution of Contracts (Individual/AOP - 8% Filer / 16% Non-Filer)</option>
+    </select>
+    
+    <label for="amount153" style="margin-top: 10px;">Payment Amount (PKR):</label>
+    <input type="number" id="amount153" placeholder="e.g. 500000" />
+
+    <label for="filerStatus153" style="margin-top: 10px;">ATL Status:</label>
+    <select id="filerStatus153">
+      <option value="filer">Filer</option>
+      <option value="nonFiler">Non-Filer</option>
+    </select>
+  </div>
+
+  <!-- Sec 154 Inputs -->
+  <div id="sec154Group" class="form-group" style="display: none;">
+    <label for="exportType">Export Type:</label>
+    <select id="exportType">
+      <option value="0.0125">General Goods Export (1.25%)</option>
+      <option value="0.0025">IT / ITeS Export proceeds - PSEB Registered (0.25%)</option>
+    </select>
+    <label for="amount154" style="margin-top: 10px;">Export Amount (PKR):</label>
+    <input type="number" id="amount154" placeholder="e.g. 1000000" />
+  </div>
+
+  <!-- Sec 155 Inputs -->
+  <div id="sec155Group" class="form-group" style="display: none;">
+    <label for="propertyOwner">Property Owner Type:</label>
+    <select id="propertyOwner">
+      <option value="individual">Individual / AOP</option>
+      <option value="company">Company (Flat 15%)</option>
+    </select>
+    <label for="annualRent" style="margin-top: 10px;">Annual Rent Amount (PKR):</label>
+    <input type="number" id="annualRent" placeholder="e.g. 1200000" />
+  </div>
+
+  <button onclick="calculateTax()">Calculate Tax</button>
+
+  <div id="resultBox" class="result-box">
+    <p id="res1"></p>
+    <p id="res2"></p>
+  </div>
+</div>
+
+<script>
+function toggleInputs() {
+  const section = document.getElementById('taxSection').value;
+  document.getElementById('salariedGroup').style.display = section === '149' ? 'block' : 'none';
+  document.getElementById('sec153Group').style.display = section === '153' ? 'block' : 'none';
+  document.getElementById('sec154Group').style.display = section === '154' ? 'block' : 'none';
+  document.getElementById('sec155Group').style.display = section === '155' ? 'block' : 'none';
+  document.getElementById('resultBox').style.display = 'none';
+}
+
+function calculateTax() {
+  const section = document.getElementById('taxSection').value;
+  const resBox = document.getElementById('resultBox');
+  const res1 = document.getElementById('res1');
+  const res2 = document.getElementById('res2');
+  
+  resBox.style.display = 'block';
+
+  // Section 149 - Salaried Tax
+  if (section === '149') {
+    const monthlySalary = parseFloat(document.getElementById('salaryInput').value) || 0;
+    const annualSalary = monthlySalary * 12;
+    let annualTax = 0;
+
+    if (annualSalary <= 600000) {
+      annualTax = 0;
+    } else if (annualSalary <= 1200000) {
+      annualTax = (annualSalary - 600000) * 0.025;
+    } else if (annualSalary <= 2200000) {
+      annualTax = 15000 + (annualSalary - 1200000) * 0.11;
+    } else if (annualSalary <= 3200000) {
+      annualTax = 125000 + (annualSalary - 2200000) * 0.23;
+    } else if (annualSalary <= 4100000) {
+      annualTax = 355000 + (annualSalary - 3200000) * 0.30;
+    } else {
+      annualTax = 625000 + (annualSalary - 4100000) * 0.35;
+    }
+
+    const monthlyTax = annualTax / 12;
+    res1.innerHTML = `Monthly Tax Deduction: <span>PKR ${Math.round(monthlyTax).toLocaleString()}</span>`;
+    res2.innerHTML = `Total Annual Tax: <span>PKR ${Math.round(annualTax).toLocaleString()}</span>`;
+  }
+
+  // Section 153 - Goods, Services & Contracts
+  else if (section === '153') {
+    const amount = parseFloat(document.getElementById('amount153').value) || 0;
+    const sub = document.getElementById('subCategory153').value;
+    const isFiler = document.getElementById('filerStatus153').value === 'filer';
+
+    const rateMap = {
+      'goods_company': [0.05, 0.10],
+      'goods_other': [0.055, 0.11],
+      'services_general': [0.07, 0.14],
+      'services_it': [0.04, 0.08],
+      'contracts_company': [0.075, 0.15],
+      'contracts_other': [0.08, 0.16]
+    };
+
+    const rate = isFiler ? rateMap[sub][0] : rateMap[sub][1];
+    const tax = amount * rate;
+
+    res1.innerHTML = `Applicable WHT Rate: <span>${(rate * 100).toFixed(2)}%</span>`;
+    res2.innerHTML = `Withholding Tax Amount: <span>PKR ${Math.round(tax).toLocaleString()}</span>`;
+  }
+
+  // Section 154 - Exports
+  else if (section === '154') {
+    const amount = parseFloat(document.getElementById('amount154').value) || 0;
+    const rate = parseFloat(document.getElementById('exportType').value);
+    const tax = amount * rate;
+
+    res1.innerHTML = `Applicable Export WHT Rate: <span>${(rate * 100).toFixed(2)}%</span>`;
+    res2.innerHTML = `Deducted Tax: <span>PKR ${Math.round(tax).toLocaleString()}</span>`;
+  }
+
+  // Section 155 - Rent
+  else if (section === '155') {
+    const rent = parseFloat(document.getElementById('annualRent').value) || 0;
+    const ownerType = document.getElementById('propertyOwner').value;
+    let tax = 0;
+
+    if (ownerType === 'company') {
+      tax = rent * 0.15;
+    } else {
+      if (rent <= 300000) tax = 0;
+      else if (rent <= 600000) tax = (rent - 300000) * 0.05;
+      else if (rent <= 2000000) tax = 15000 + (rent - 600000) * 0.10;
+      else tax = 155000 + (rent - 2000000) * 0.25;
+    }
+
+    res1.innerHTML = `Annual Rent Tax: <span>PKR ${Math.round(tax).toLocaleString()}</span>`;
+    res2.innerHTML = `Monthly Rent Tax Equivalent: <span>PKR ${Math.round(tax / 12).toLocaleString()}</span>`;
+  }
+}
+</script>
+
+</body>
+</html>
